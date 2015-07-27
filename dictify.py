@@ -9,9 +9,6 @@ def dictify( data, includeInstanceMethods = False):
 		2. Serializes instance objects to a dictionary
 		3. Serializes recursivley on objects and iterable data structures
 	"""
-	#if function then returning nothing try to get some message
-	#if str(type(data)) in ["<type 'instancemethod'>", "<type 'type'>"]:
-	#	return 'function'
 	#if class instance apply dictify on data.__dict__
 	cls = re.compile("<class .*>").match(str(type(data)))
 	if cls:
