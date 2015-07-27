@@ -24,15 +24,12 @@ def dictify( data, includeInstanceMethods = False):
 	if dataType:
 		if not '__iter__' in dir(data):
 			return data
-	
-	if type(data) in [list, set, tuple]:
-		result = []
-		for item in data:
-			result.append(dictify(item, includeInstanceMethods))
-		return result
-	if type(data) == dict:
-		result = {}
-		for key in data.keys():
-			result[key]=dictify(data[key], includeInstanceMethods)
-		return result
-		
+		else:
+			if type(data) == dict:
+				result = {}
+				for key in data.keys():
+					result[key]=dictify(data[key], includeInstanceMethods)
+				return result	
+			else: 
+				return list([dictify(item, includeInstanceMethods) for item in data])
+				
