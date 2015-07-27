@@ -1,2 +1,2 @@
-# dictify
-# simple module to serialize any python object or iterable to json convertable.
+# dictify is a simple method that accepts any python object or iterable and
+# makes it JSON convertable avoiding the serialization error.
